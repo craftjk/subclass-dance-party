@@ -4,6 +4,8 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image:url('http://photo.elsoar.com/wp-content/images/Amazing-empty-stage.jpg');
+  background-size: 100% 100%;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -32,4 +34,11 @@ body, a:link, a:visited, a:active{
 .rainbow{
   border:10px solid yellow;
   position:absolute;
+}
+.tiny{
+  border:10px solid red;
+  position:absolute;
+}
+.elton{
+  background-image:url('http://www.insertboobshere.com/wp-content/uploads/2012/12/music-monday-elton-john-tiny-dancer-L-7xLUyZ.jpeg')
 }
