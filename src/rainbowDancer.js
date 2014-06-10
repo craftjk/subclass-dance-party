@@ -18,10 +18,6 @@ RainbowDancer.prototype.step = function() {
 
 RainbowDancer.prototype.toggleColor = function() {
   var context = this;
-  this.$node.fadeToggle();
-  // toggle(
-  //   function(){this.$node.css({"border":"10px solid red"});}.bind(this),
-  //   function(){this.$node.css({"border":"10px solid blue"});}.bind(this),
-  //   function(){this.$node.css({"border":"10px solid green"});}.bind(this)
-  // );
+  var colors = ["brown", "green", "yellow", "purple", "pink", "gray","white","black"];
+  this.$node.css({"border":"10px solid " + colors[Math.floor(Math.random() * colors.length)]});
 };
