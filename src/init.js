@@ -1,8 +1,9 @@
 $(document).ready(function(){
   window.dancers = [];
-  var midTop = $(window).height()/2;
-  var midLeft = $(window).width()/2;
-  window.discoBall = new DiscoBall(1000, 1000);
+  var discoBallX = $(window).width() / 2 - 50;
+  var discoBallY = 0 - 100;
+
+  window.discoBall = new DiscoBall(discoBallX, discoBallY);
   $('body').append(window.discoBall.$node);
 
   var image = document.getElementById('discoball');
@@ -12,8 +13,6 @@ $(document).ready(function(){
   image.onload = function() {
     discoBallTop = 0 - image.clientHeight;
     discoBallLeft = $(window).width() / 2 - image.clientWidth / 2;
-    console.log("final top: " + discoBallTop);
-    console.log("final left: " + discoBallLeft);
     window.discoBall.setPosition(discoBallTop, discoBallLeft);
   };
 

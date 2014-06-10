@@ -1,6 +1,6 @@
 var DiscoBall = function(top, left, timeBetweenSteps) {
   this.$node = $('<div class="discoball"></div>');
-  this.$node.append('<img height=200px id="discoball" src="src/art/ezgif-save.gif" />');
+  this.$node.append('<img height=100px id="discoball" src="src/art/ezgif-save.gif" />');
 
   this.setPosition(top, left);
   this.lights = [];
@@ -14,8 +14,8 @@ DiscoBall.COLORS = ["white", "Coral", "DarkOrchid", "LimeGreen", "MediumSlateBlu
 
 DiscoBall.prototype.setPosition = function(top, left) {
   // Use css top and left properties to position our <div>
-  this.top = 0;
-  this.left = 0;
+  this.top = top;
+  this.left = left;
   var styleSettings = {
     top: top,
     left: left
@@ -49,9 +49,11 @@ DiscoBall.prototype.step = function() {
 };
 
 DiscoBall.prototype.dropDown = function() {
-
-  this.setPosition(0,0);
-  this.$node.addClass('dropped');
-  $('#discoball').addClass('dropped');
-
+  if ($('#discoball').hasClass('dropped')) {
+    $('#discoball').addClass('raised');
+    $('#discoball').removeClass('dropped');
+  } else {
+    $('#discoball').addClass('dropped');
+    $('#discoball').removeClass('raised');
+  }
 };
