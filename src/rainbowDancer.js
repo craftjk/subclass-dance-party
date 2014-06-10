@@ -17,7 +17,6 @@ RainbowDancer.prototype.step = function() {
 };
 
 RainbowDancer.prototype.toggleColor = function() {
-  var context = this;
   var colors = ["brown", "green", "yellow", "purple", "pink", "gray","white","black"];
   this.$node.css({"border":"10px solid " + colors[Math.floor(Math.random() * colors.length)]});
 };
