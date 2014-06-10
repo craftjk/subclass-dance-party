@@ -1,18 +1,22 @@
-var DiscoLight = function(colors) {
-  this.color = colors[Math.floor(Math.random() * colors.length)];
+var DiscoLight = function(top, left, color) {
+  this.color = color;
   this.$node = $('<span class="light"></span>');
+  this.setPosition(top, left);
+  this.moveSize = 5;
+  this.$node.css({
+    "border": "10px solid " + color,
+    "opacity": "0.5"
+  });
+  this.$node.hide();
 };
 
 DiscoLight.prototype.step = function() {
-  // call the old version of step at the beginning of any call to this new version of step
-  this.oldStep();
-
   // change color of dancer
   this.toggleColor();
   this.moveRight();
 };
 
-Dancer.prototype.setPosition = function(top, left) {
+DiscoLight.prototype.setPosition = function(top, left) {
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
   //
@@ -37,7 +41,6 @@ DiscoLight.prototype.moveRight = function() {
 };
 
 DiscoLight.prototype.wrap = function() {
-  console.log("width: " + $(window).width());
   if (this.left > $(window).width()) {
     this.setPosition(this.top, 0);
   }

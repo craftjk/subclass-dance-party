@@ -1,5 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.discoBall = new DiscoBall(10, 10, 30);
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -29,5 +30,7 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
   });
+  $(".activateLightsButton").on("click", function(event) {
+    window.discoBall.activateLights();
+  });
 });
-
