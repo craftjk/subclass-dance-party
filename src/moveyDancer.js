@@ -1,4 +1,5 @@
 var MoveyDancer = function(top, left, timeBetweenSteps) {
+  this.moveSize = 5;
   Dancer.apply(this, arguments);
 };
 
@@ -11,8 +12,12 @@ MoveyDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
 
-  // toggle() is a jQuery method to show/hide the <span> tag.
-  // See http://api.jquery.com/category/effects/ for this and
-  // other effects you can use on a jQuery-wrapped html tag.
-  this.$node.toggle();
+  // randomly move dancer
+  this.move();
+};
+
+MoveyDancer.prototype.move = function() {
+  var newTop = ((Math.random() - 0.5) * this.moveSize) + this.top;
+  var newLeft = ((Math.random() - 0.5) * this.moveSize) + this.left;
+  this.setPosition(newTop, newLeft);
 };
