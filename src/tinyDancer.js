@@ -1,15 +1,15 @@
-var MoveyDancer = function(top, left, timeBetweenSteps) {
-  this.moveSize = 5;
+var TinyDancer = function(top, left, timeBetweenSteps) {
+  this.moveSize = 50;
   Dancer.apply(this, arguments);
-  this.$node.addClass('tiny');
+  this.$node.addClass('mover');
 };
 
-MoveyDancer.prototype = Object.create(Dancer.prototype);
-MoveyDancer.prototype.constructor = MoveyDancer;
+TinyDancer.prototype = Object.create(Dancer.prototype);
+TinyDancer.prototype.constructor = TinyDancer;
 
-MoveyDancer.prototype.oldStep = MoveyDancer.prototype.step;
+TinyDancer.prototype.oldStep = TinyDancer.prototype.step;
 
-MoveyDancer.prototype.step = function() {
+TinyDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
 
@@ -17,7 +17,7 @@ MoveyDancer.prototype.step = function() {
   this.move();
 };
 
-MoveyDancer.prototype.move = function() {
+TinyDancer.prototype.move = function() {
   var newTop = ((Math.random() - 0.5) * this.moveSize) + this.top;
   var newLeft = ((Math.random() - 0.5) * this.moveSize) + this.left;
   this.setPosition(newTop, newLeft);
