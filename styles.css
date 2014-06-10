@@ -25,3 +25,11 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.mover{
+  border:10px solid blue;
+  position:absolute;
+}
+.rainbow{
+  border:10px solid yellow;
+  position:absolute;
+}
