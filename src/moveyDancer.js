@@ -1,6 +1,7 @@
 var MoveyDancer = function(top, left, timeBetweenSteps) {
-  this.moveSize = 5;
+  this.moveSize = 50;
   Dancer.apply(this, arguments);
+  this.$node.addClass('mover');
 };
 
 MoveyDancer.prototype = Object.create(Dancer.prototype);
