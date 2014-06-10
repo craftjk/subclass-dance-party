@@ -1,6 +1,21 @@
 $(document).ready(function(){
   window.dancers = [];
-  window.discoBall = new DiscoBall(10, 10, 30);
+  var midTop = $(window).height()/2;
+  var midLeft = $(window).width()/2;
+  window.discoBall = new DiscoBall(1000, 1000);
+  $('body').append(window.discoBall.$node);
+
+  var image = document.getElementById('discoball');
+  var discoBallLeft;
+  var discoBallTop;
+
+  image.onload = function() {
+    discoBallTop = 0 - image.clientHeight;
+    discoBallLeft = $(window).width() / 2 - image.clientWidth / 2;
+    console.log("final top: " + discoBallTop);
+    console.log("final left: " + discoBallLeft);
+    window.discoBall.setPosition(discoBallTop, discoBallLeft);
+  };
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -32,5 +47,7 @@ $(document).ready(function(){
   });
   $(".activateLightsButton").on("click", function(event) {
     window.discoBall.activateLights();
+    window.discoBall.dropDown();
+
   });
 });

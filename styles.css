@@ -41,10 +41,17 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .elton{
-  background-image:url('http://www.insertboobshere.com/wp-content/uploads/2012/12/music-monday-elton-john-tiny-dancer-L-7xLUyZ.jpeg')
+  background-image:url('http://www.insertboobshere.com/wp-content/uploads/2012/12/music-monday-elton-john-tiny-dancer-L-7xLUyZ.jpeg');
 }
 .light{
   border: 10px solid;
   border-radius: 10px;
   position: absolute;
+}
+.discoball{
+  position: absolute;
+  background-size: auto auto;
+}
+.dropped{
+
 }
